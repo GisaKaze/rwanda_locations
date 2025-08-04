@@ -11,19 +11,19 @@ def get_location_data():
 
 def get_provinces():
     data = get_location_data()
-    return dict.fromkeys(data.keys())  # Ensure dict return
+    return dict.fromkeys(data.keys()).keys()  # Ensure dict keys return
 
 def get_districts(province):
     data = get_location_data()
-    return dict.fromkeys(data.get(province, {}).keys())  # Ensure dict return
+    return dict.fromkeys(data.get(province, {}).keys()).keys()  # Ensure dict return
 
 def get_sectors(province, district):
     data = get_location_data()
-    return dict.fromkeys(data.get(province, {}).get(district, {}).keys())  # Ensure dict return
+    return dict.fromkeys(data.get(province, {}).get(district, {}).keys()).keys()  # Ensure dict return
 
 def get_cells(province, district, sector):
     data = get_location_data()
-    return dict.fromkeys(data.get(province, {}).get(district, {}).get(sector, {}).keys())  # Ensure dict return
+    return dict.fromkeys(data.get(province, {}).get(district, {}).get(sector, {}).keys()).keys()  # Ensure dict return
 
 def get_villages(province, district, sector, cell):
     data = get_location_data()
